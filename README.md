@@ -4,7 +4,7 @@
 
 api/axios封装的请求方法可根据各自需求修改；
 
-在components里二封了饿了么的form,table,dialog，使用方法views/system/user页面里有例子，index.ts是用来配置全局公共组件的地方；
+在components里是按照平时工作习惯二封的element的form,table,dialog，使用方法views/system/user页面里有例子，index.ts是用来配置全局公共组件的地方；
 
 router里新增路由也只需要添加在module文件夹下即可，permission.ts里可根据各自需求修改；
 

@@ -21,6 +21,7 @@
             @click="assignRoles(row)"
             >{{ commonRolesBtn }}</el-button>
             <el-button 
+            v-preventReClick
             size="small"
             type="primary" 
             icon="Edit" 

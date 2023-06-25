@@ -4,6 +4,7 @@ import '@/styles/index.scss'
 import router from './router'
 import '@/router/permission.ts'
 import App from './App.vue'
+import { loadDirectives } from '@/directive/index.ts'
 
 import ElementPlus from 'element-plus'
 import 'element-plus/theme-chalk/dark/css-vars.css'
@@ -15,6 +16,8 @@ import 'virtual:svg-icons-register'
 import gloablComponent from './components/index';
 
 const app = createApp(App)
+//加载自定义指令
+loadDirectives(app)
 //注册全局icon
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

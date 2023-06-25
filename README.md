@@ -8,7 +8,9 @@ api/axios封装的请求方法可根据各自需求修改；
 
 router里新增路由也只需要添加在module文件夹下即可，permission.ts里可根据各自需求修改；
 
-store里新增也只需要在module文件夹下添加即可，具体store使用方法页面有例子；
+store只需要在module文件夹下新增添加即可，具体store使用方法页面有例子；
+
+directive里新增自定义指令也只需要在module文件夹下添加即可，具体views/system/user页面有使用方法
 
 项目中用到的接口是尚硅谷的免费教学接口，感谢尚硅谷
 

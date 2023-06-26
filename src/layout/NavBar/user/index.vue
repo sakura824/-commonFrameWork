@@ -27,7 +27,13 @@ const setColor = () => {
     const html = document.documentElement;
     //示例 修改elementui的button颜色
     //具体需要修改哪个属性可以f12打开控制台自行查看修改，也可以查看el源码
+    // html.style.setProperty('--el-button-hover-bg-color',color.value);
+    // html.style.setProperty('--el-button-hover-border-color',color.value);
     html.style.setProperty('--el-color-primary',color.value);
+    html.style.setProperty('--el-color-primary-light-9','#fff');    //修改以后默认背景色是白色
+    html.style.setProperty('--el-color-primary-light-5',color.value);
+    html.style.setProperty('--el-button-hover-bg-color',color.value);
+    html.style.setProperty('--el-color-primary-light-3',color.value);
 }
 //暗黑主题
 const dark = ref()

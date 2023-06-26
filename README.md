@@ -1,6 +1,6 @@
 # Vue 3 + TypeScript + Vite
 
-这是我使用vue3+ts+vite+pinia搭建的后台管理系统架子
+这是我使用vue3+ts+vite+pinia搭建的后台管理系统架子,支持主题色修改，暗黑模式，全屏
 
 api/axios封装的请求方法可根据各自需求修改；
 

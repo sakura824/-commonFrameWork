@@ -1,7 +1,14 @@
 <template>
   <template v-for="item in routes" :key="item.path">
-    <!-- 多个子路由 -->
-    <template v-if="item.children">
+    <!-- 一个子路由 -->
+    <template v-if="item.children && item.children.length === 1">
+      <el-menu-item :index="item.children[0].path" @click="goRouter">
+        <el-icon><component :is="item.children[0].meta.icon"></component></el-icon>
+        <span>{{ item.children[0].meta.title }}</span>
+    </el-menu-item>
+    </template>
+    <!-- 多个子路由 --> 
+    <template v-else-if="item.children && item.children.length > 1">
       <el-sub-menu :index="item.path">
         <template #title>
           <el-icon><component :is="item.meta.icon"></component></el-icon>
@@ -9,13 +16,6 @@
         </template>
         <side-bar-item :routes="item.children"></side-bar-item>
       </el-sub-menu>
-    </template>
-    <!-- 一个子路由 -->
-    <template v-else-if="item.children && item.children.length === 1">
-      <el-menu-item :index="item.children[0].path" @click="goRouter">
-        <el-icon><component :is="item.children[0].meta.icon"></component></el-icon>
-        <span>{{ item.children[0].meta.title }}</span>
-    </el-menu-item>
     </template>
     <!-- 没有子路由 -->
     <template v-else>

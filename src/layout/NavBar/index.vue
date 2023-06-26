@@ -3,8 +3,8 @@
         <el-icon class="icon" :class="{ 'is-active': props.isActive }" size="30" color="#fff" @click="props.expansionContraction">
             <Menu />
         </el-icon>
-        <el-breadcrumb style="margin-left: 20px;" separator="/">
-          <el-breadcrumb-item v-for="item in route.matched" :key="item.path" :to="{ path: item.path }">{{ item.meta.title }}</el-breadcrumb-item>
+        <el-breadcrumb style="margin-left: 20px;" separator-icon="ArrowRight">
+          <el-breadcrumb-item v-for="item in route.matched" :key="item.path" v-show="item.meta.title" :to="{ path: item.path }">{{ item.meta.title }}</el-breadcrumb-item>
         </el-breadcrumb>
         <User style="margin-left: auto;"></User>
     </div>

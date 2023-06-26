@@ -3,7 +3,7 @@
 </script>
 <template>
     <div>
-        111
+        首页
     </div>
 </template>
 

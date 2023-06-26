@@ -13,7 +13,7 @@ router.beforeEach( async (to) => {
     // 判断token是否存在
     const token = window.localStorage.getItem('token')
     // 通过白名单控制不需要登录的页面
-    const whiteList = ['/login', '/login/callback', '/register']
+    const whiteList = ['/login']
     if(token) {
       await userStore.getUser()
       // 如果不在白名单且没有登录, 跳转到登录页面
@@ -29,7 +29,7 @@ router.beforeEach( async (to) => {
   
   router.afterEach((to) => {
     // 处理标题
-    document.title = `vue3+ts+vite+pinia`
+    document.title = `后台管理系统`
     // 进入页面之后 关闭进度条
     NProgress.done()
   })

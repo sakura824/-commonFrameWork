@@ -4,6 +4,7 @@ import { reactive, ref } from "vue";
 import { useRouter, RouteRecordRaw } from 'vue-router'
 import { UserInfo } from '@/interfaces/user'
 import { asyncRoutes } from "@/router";
+import homeRoute from '@/router/modules/home'
 import { ResponseParams } from '@/interfaces/common'
 
 interface RouteInfo {
@@ -69,7 +70,7 @@ export const useUserStore = defineStore('user', () => {
             routeInfo.avatar = data.avatar
             routeInfo.buttons = data.buttons
             routeInfo.roles = data.roles
-            routeInfo.routes = filterRoutes(asyncRoutes, data.routes)
+            routeInfo.routes = [...homeRoute, ...filterRoutes(asyncRoutes, data.routes)]
             return data
         } else {
             return Promise.reject(data)

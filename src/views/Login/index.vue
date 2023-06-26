@@ -31,16 +31,11 @@ const onSubmit = () => {
     if(v) {
       loading.value = true
       const res: boolean = await userStore.loginFunc(userInfo)
-      if(res) {
-        loading.value = false
-        router.push('/')
-      }
+      loading.value = false
+      if(res) router.push('/')
     }
   })
 }
-// const btn1 = () => {
-//   userStore.logOut()
-// }
 
 </script>
 <template>
@@ -51,18 +46,17 @@ const onSubmit = () => {
     :rules="rules"
     ref="formRef"
     label-width="120px">
+    <div style="text-align: center; padding-bottom: 20px; font-size: 20px;">后台管理系统</div>
       <el-form-item label="用户名">
         <el-input v-model="userInfo.username" />
       </el-form-item>
       <el-form-item label="密码">
         <el-input v-model="userInfo.password" />
       </el-form-item>
-      <el-form-item>
-        <el-button :loading="loading" type="primary" @click="onSubmit">
+      <el-button :loading="loading" type="primary" @click="onSubmit">
         <span v-if="!loading">登录</span>
         <span v-else>登录中...</span>
-        </el-button>
-      </el-form-item>
+      </el-button>
     </el-form>
   </div>
 </template>
@@ -78,7 +72,7 @@ const onSubmit = () => {
     position: absolute;
     width: 25%;
     top: 30%;
-    left: 60%;
+    left: 38%;
     background-color: #fff;
     border-radius: 15px;
     padding: 40px;

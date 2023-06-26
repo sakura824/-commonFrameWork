@@ -38,7 +38,7 @@ export const useUserStore = defineStore('user', () => {
             window.localStorage.setItem('token', token.value)
             return true
         } else {
-            return Promise.reject(data)
+            return false
         }
     }
     //登出

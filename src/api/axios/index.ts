@@ -34,7 +34,7 @@ instance.interceptors.response.use((res: any) => {
     if(Reflect.has(res, 'data') && res.data.code !== 200) {
         ElNotification({
             title: '错误',
-            message: res.data?.msg || getCodeMessage(res.statusText),
+            message: res.data?.msg || getCodeMessage(res.statusText) || res.data?.data || '异常错误，请重试',
             type: 'error',
           })
           return res.data

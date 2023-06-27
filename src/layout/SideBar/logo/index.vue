@@ -15,7 +15,7 @@ const props = defineProps({
 
 <template>
     <div v-if="props.isCollapse" class="logo">
-        <img style="width: 65px; height: 60px;" :src="logo.logoImg" alt="">
+        <img class="change-img" :src="logo.logoImg" alt="">
     </div>
     <div v-else>
         <img style="width: 100%;" :src="logo.logoImg" alt="">
@@ -24,7 +24,9 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-.logo {
-    // background-color: $background-menu;
+ //图标按照实际设计情况修改样式，默认正方形图标
+.change-img {
+    width: $change-width;
+    height: $change-width;
 }
 </style>

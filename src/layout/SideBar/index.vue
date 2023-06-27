@@ -4,7 +4,7 @@
         <el-menu
         :collapse="settigStore.isCollapse"
         :default-active="route.path"
-        background-color="background-menu" 
+        background-color="#040a32" 
         text-color="white"
         @open="handleOpen"
         @close="handleClose"

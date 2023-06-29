@@ -29,6 +29,12 @@ export default defineConfig(({command, mode}) => {
           //   [`^${env.VITE_APP_PROXY}`]: ''
           // }
         },
+        //socket配置
+        '/aaa': {
+          target: "ws://172.20.4.100:3333",
+          // changeOrigin: true, //需要代理跨域
+          ws: true,
+        },
       },
       open: true
     },

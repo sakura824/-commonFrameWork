@@ -45,7 +45,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import type { TableColumnCtx } from 'element-plus/es/components/table/src/table-column/defaults';
+import { ElTable } from 'element-plus';
 import { userList, setUserRole } from '@/api/modules/user'
 import { ResponseParams } from '@/interfaces/common'
 //组件ref
@@ -71,7 +71,7 @@ const responseAdapterFn = (data: any) => {
   return data.records
 }
 //这样定义类型是为了方便在对象里添加属性时提示框可以直接提示属性名
-const tableColumns = reactive<(TableColumnCtx<Record<string, any>>[] | Record<string, any>)>([
+const tableColumns = reactive<(typeof ElTable | Record<string, any>)>([
     { label: 'ID', prop: 'id' },
     { label: '用户名字', prop: 'username' },
     { label: '用户名称', prop: 'name' },

@@ -64,6 +64,8 @@ export const useUserStore = defineStore('user', () => {
     }
     //获取用户信息
     const getUser = async () => {
+        routeInfo.routes = [...homeRoute, ...asyncRoutes]
+        return
         const { code, data }: ResponseParams = await getUserInfo()
         if(code === 200) {
             routeInfo.name = data.name

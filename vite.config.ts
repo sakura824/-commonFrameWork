@@ -5,14 +5,11 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import { viteMockServe } from 'vite-plugin-mock'
 import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig(({command, mode}) => {
   const localEnabled = command === 'serve';
-  let mockPath: string = ''
-  if(localEnabled) mockPath = 'mock'
   // 根据当前工作目录中的 `mode` 加载 .env 文件
   // 设置第三个参数为 '' 来加载所有环境变量，而不管是否有 `VITE_` 前缀。
   const env = loadEnv(mode, process.cwd(), '');
@@ -44,10 +41,6 @@ export default defineConfig(({command, mode}) => {
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]',
-      }),
-      //配置mock
-      viteMockServe({
-        mockPath,
       }),
       AutoImport({
         resolvers: [ElementPlusResolver()],
